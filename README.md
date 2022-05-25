@@ -1,6 +1,7 @@
 # rhlm_full_chat
 Información en el discord: https://discord.gg/ZdDBjyYr9x
 
+Creditos: 😈 𝐀𝐍𝐔𝐄𝐋 𝐀𝐀 😈#6979
 
 Optimizado: Si
 
