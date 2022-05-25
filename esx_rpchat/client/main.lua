@@ -432,6 +432,24 @@ AddEventHandler('chatMessageIg', function(id, message)
     end
 end)
 
+RegisterNetEvent('chatMessageId')
+AddEventHandler('chatMessageId', function(id, message)
+    local myId = PlayerId()
+    local pid = GetPlayerFromServerId(id)
+
+    if pid == myId then
+        TriggerEvent('chat:addMessage', {
+            template = '<div style="padding: 2px; margin: 1px; background-color: rgba(128, 0, 128); border-radius: 4px;"><i class="fas fa-user"></i> ID - {0}  ➥ ^0{1}</div>',
+            args = { id, message }
+        })
+    elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 19.9 then
+        TriggerEvent('chat:addMessage', {
+            template = '<div style="padding: 2px; margin: 1px; background-color: rgba(128, 0, 128); border-radius: 4px;"><i class="fas fa-user"></i> ID - {0} ➥ ^0{1}</div>',
+            args = { id, message }
+        })
+    end
+end)
+
 RegisterNetEvent('chatMessageTinder')
 AddEventHandler('chatMessageTinder', function(id, message)
     local myId = PlayerId()
