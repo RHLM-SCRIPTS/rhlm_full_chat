@@ -43,6 +43,11 @@ RegisterCommand('ooc', function(source, args, user)
 	TriggerClientEvent("chatMessageOoc", -1, source, table.concat(args, " "))
 end)
 
+RegisterCommand('id', function(source, args, user)
+	local name = GetPlayerName(source)
+	TriggerClientEvent("chatMessageId", -1, source, table.concat(args, " "))
+end)
+
 RegisterCommand('tequila', function(source, args, user)
 	local name = GetPlayerName(source)
 	TriggerClientEvent("chatMessageTeq", -1, source, table.concat(args, " "))
